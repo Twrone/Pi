@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pi Infinito</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    #piDigits {
+      font-size: 24px;
+      position: absolute;
+      white-space: nowrap;
+      animation: expand 10s linear infinite;
+    }
+
+    @keyframes expand {
+      from { transform: scale(1); }
+      to { transform: scale(100); }
+    }
+  </style>
+</head>
+<body>
+  <div id="piDigits">
+    <script>
+      function generatePi() {
+        let pi = "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679";
+        let piString = pi;
+        while (true) {
+          piString += pi;
+          document.getElementById("piDigits").innerText = piString;
+        }
+      }
+
+      generatePi();
+    </script>
+  </div>
+</body>
+</html>
